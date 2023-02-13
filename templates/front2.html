@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <title>Effort Estimator, v2.0</title>
+</head>
+
+<style>
+  .links-container{
+  padding-left: 40px;
+  }  
+  /* Center the container on the page */
+  .container{
+  width: 1081px;
+  margin: 0 auto;
+  padding: 20px;
+  }   
+  /* Style the heading */
+  h1{
+  font-size: 36px;
+  font-weight: 550;
+  margin-bottom: 20px;
+  }     
+  /* Add some spacing to the paragraph */
+  p{
+  margin-bottom: 20px;
+  }       
+  nav ul{
+  list-style-type: none;
+  }
+  ul li a{
+  color: #86bc25;
+  display: inline-block;
+  list-style-type: none;
+  padding-left: 2rem;
+  }
+  section {
+  display: none; /* set the display property to none for all sections */
+  }
+  section:target {
+    display: block; /* set the display property to block for the section that is the target of the clicked link */
+  }
+  a:active {
+  color: #86bc25;
+  }
+  .links-container a:link{
+  text-decoration: none;
+  }
+  .links-container a:hover{
+  text-decoration: underline;
+  }
+  ul{
+  display: inline-block;
+  list-style-type: none;
+  }
+  .links-text{
+  color: black;
+  font-size: 0.35cm;
+  }
+  .f{
+  color: rgba(255, 255, 255, 0.5);
+  padding: 2rem;
+  }
+  .header{
+  text-align: left;
+  font-size: small;
+  line-height: 1.4;
+  }
+  .header a:link{
+  text-decoration: none;
+  }
+  .header a:hover{
+  text-decoration: underline;
+  }
+  h6.mb-5{
+  color: white;
+  font-weight: normal;
+  font-size: 14px;
+  }
+</style>
+
+
+<body>
+  <button class="nav-btn open-btn">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <div style="display:flex; align-items:center; justify-content:center; background-color:white;">
+      <a class="navbar-brand" href="#">
+        <h2 style="color:black;">
+          <b class="bold">Deloitte</b><span style="color:#86bc25">.</span>
+        </h2>
+      </a>
+  </div>
+
+  <p class="text">ETLR Effort Estimator</p>
+
+  <div class="nav nav-black">
+    <div class="nav nav-green">
+      <div class="nav nav-white">
+        <button class="nav-btn close-btn">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="links-container">
+        <ul class="list">
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How it Works</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        </div>
+
+        <main>
+          <div class="links-text">
+          <section id="introduction">
+              <h3>Introduction</h3>
+              <p>Welcome to our advanced Effort Estimator Tool for BODS. This tool is designed to make data migration
+                  projects stress-free by providing an easy and accurate way to estimate the effort required. With our
+                  user-friendly interface, you can select your objects and get a detailed estimate in no time. Whether
+                  you're a project manager, analyst, or developer, our tool is the perfect solution for your data
+                  migration needs.</p>
+          </section>
+          <section id="features">
+              <h3>Features</h3>
+              <ul>
+                  <li>Object selection, Detailed estimate, User-friendly interface, Platform-agnostic</li>
+              </ul>
+          </section>
+          <section id="how-it-works">
+              <h3>How it Works</h3>
+              <ul>
+                  <li>Select the objects you want to estimate the effort for.</li>
+                  <li>Our tool will calculate the effort required for each object and provide a detailed estimate.</li>
+                  <li>The estimate includes the total number of hours and the number of resources needed.</li>
+              </ul>
+          </section>
+          <section id="benefits">
+              <h3>Benefits</h3>
+              <ul>
+                <li>Reduce stress, Save time, Improve accuracy, Platform-agnostic</li>
+              </ul>
+          </section>
+          <section id="testimonials">
+              <h3>Testimonials</h3>
+              <blockquote>
+                  "I have been using the Effort Estimator Tool for BODS for all of my data migration projects and it has
+                  been a game changer. It has made my job so much easier and less stressful."<br>- Priyanka Gohil, Senior Consultant
+              </blockquote>
+              <blockquote>
+                  "I highly recommend the Effort Estimator Tool for BODS. It is accurate, user-friendly, and has saved me
+                  so much time."<br>- Rohit Bandre, Analyst
+              </blockquote>
+          </section>
+          <section id="faq">
+              <h3>FAQ</h3>
+              <ul>
+                  <li>
+                      <strong>Can I use the Effort Estimator Tool for BODS on any platform?</strong>
+                      <br>
+                      Yes, the tool is platform-agnostic and can be used on any platform.
+                  </li>
+                  <li>
+                      <strong>How accurate is the estimate provided by the Effort Estimator Tool for BODS?</strong>
+                      <br>
+                      Our tool is designed to be accurate, reducing the risk of errors and ensuring the success of your
+                      data migration project.
+                  </li>
+                  <li>
+                      <strong>How many objects can I select for an estimate?</strong>
+                      <br>
+                      Our tool allows you to select as many objects as required, pick all the objects or only one, 
+                      with no limit on the number of objects. This way, you can tailor the estimate to the specific needs 
+                      of your project and ensure that you have the resources and time required for a successful migration.
+                  </li>
+              </ul>
+          </section>
+          </div>    
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
