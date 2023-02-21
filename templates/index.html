@@ -9,12 +9,12 @@
       <style>
         .card-header{
         height: 50px;
-        width: 850px;
+        width: 950px;
         background-color: #86bc25;
         color: black;
         }
         .card-body{
-        width: 850px;
+        width: 950px;
         display: grid;
         align-items: normal;
         }
@@ -28,6 +28,46 @@
         right: 9px;
         outline: none;
         border-radius: 5px;
+        }
+        .radio-button-right-corner{
+        position: absolute;
+        top: 58px;
+        right: 1rem;
+        outline: none;
+        border: none;
+        padding: 1px;
+        border-radius: 2px;
+        }
+        .radio-button-name-right-corner{
+        position: absolute;
+        top: 50px;
+        right: 2rem;
+        outline: none;
+        border: none;
+        padding: 1px;
+        border-radius: 2px;
+        }
+        .filter-name-right-corner {
+        position: absolute;
+        top: 10px;
+        right: 19.6rem;
+        outline: none;
+        border: none;
+        padding: 1px;
+        border-radius: 2px;
+        }
+        .filter-bar-right-corner {
+        position: absolute;
+        top: 14px;
+        right: 12.80rem;
+        outline: none;
+        border: none;
+        padding: 1px;
+        border-radius: 2px;
+        font-size: 0.9rem;
+        background-color: #f2f2f2;
+        font-style: oblique;
+        color: #666;
         }
         th, td{
         padding-right: 25px;
@@ -71,14 +111,27 @@
               <h4 class="card-title">Select Objects</h4>
               <label for="search-box"></label>
               <input type="search" class="search-box-right-corner" id="search-box" placeholder="Enter search term">
+              <div>
+                <label for="filter-column" class="filter-name-right-corner">Filter by:</label>
+                <select id="filter-column" class="filter-bar-right-corner">
+                  <option value="3">Object Name</option>
+                  <option value="4">Process Area</option>
+                  <option value="5">Complexity</option>
+                </select>
+              </div>
+              <div>
+                <input type="radio" class="radio-button-right-corner" name="select-all-radio" id="select-all-radio" value="all">
+                <label for="select-all-radio" class="radio-button-name-right-corner">Select all objects</label>
+              </div>
             </div>
-          </form>
+          </form>       
           <div class="card-body d-flex flex-column align-items-start justify-content-between">
             <table class="table">
               <thead>
                 <tr>
-                  <th>
-                  </th>
+                  <th>ETLR Jobs</th>
+                  <th>DQ Jobs</th>
+                  <th>Excess Volume</th>
                   <th>Object Name</th>
                   <th>Process Area</th>
                   <th>Complexity</th>
@@ -89,6 +142,12 @@
                   <td>
                     <input type="checkbox" id="object-1" name="objects" value="1">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-1" name="dq_objects" value="1">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-1" name="dv_objects" value="1">
+                  </td>
                   <td>House Bank</td>
                   <td>FI</td>
                   <td>Very Low</td>
@@ -96,6 +155,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-2" name="objects" value="2">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-2" name="dq_objects" value="2">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-2" name="dv_objects" value="2">
                   </td>
                   <td>CO Config</td>
                   <td>FI</td>
@@ -105,6 +170,12 @@
                   <td>
                     <input type="checkbox" id="object-3" name="objects" value="3">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-3" name="dq_objects" value="3">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-3" name="dv_objects" value="3">
+                  </td>
                   <td>G/L Accounts</td>
                   <td>FI</td>
                   <td>Very Low</td>
@@ -112,6 +183,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-4" name="objects" value="4">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-4" name="dq_objects" value="4">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-4" name="dv_objects" value="4">
                   </td>
                   <td>Profit Center (Profit center group)</td>
                   <td>FI</td>
@@ -121,6 +198,12 @@
                   <td>
                     <input type="checkbox" id="object-5" name="objects" value="5">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-5" name="dq_objects" value="5">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-5" name="dv_objects" value="5">
+                  </td>
                   <td>Cost Center (Cost center group)</td>
                   <td>FI</td>
                   <td>Very Low</td>
@@ -128,6 +211,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-6" name="objects" value="6">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-6" name="dq_objects" value="6">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-6" name="dv_objects" value="6">
                   </td>
                   <td>Tax Keys</td>
                   <td>FI</td>
@@ -137,6 +226,12 @@
                   <td>
                     <input type="checkbox" id="object-7" name="objects" value="7">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-7" name="dq_objects" value="7">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-7" name="dv_objects" value="7">
+                  </td>
                   <td>Bank Key (customer, supplier)</td>
                   <td>FI</td>
                   <td>Low</td>
@@ -144,6 +239,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-8" name="objects" value="8">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-8" name="dq_objects" value="8">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-8" name="dv_objects" value="8">
                   </td>
                   <td>Customer</td>
                   <td>SD</td>
@@ -153,6 +254,12 @@
                   <td>
                     <input type="checkbox" id="object-9" name="objects" value="9">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-9" name="dq_objects" value="9">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-9" name="dv_objects" value="9">
+                  </td>
                   <td>Supplier</td>
                   <td>P2P</td>
                   <td>Very High</td>
@@ -160,6 +267,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-10" name="objects" value="10">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-10" name="dq_objects" value="10">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-10" name="dv_objects" value="10">
                   </td>
                   <td>Products</td>
                   <td>PP</td>
@@ -169,13 +282,25 @@
                   <td>
                     <input type="checkbox" id="object-11" name="objects" value="11">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-11" name="dq_objects" value="11">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-11" name="dv_objects" value="11">
+                  </td>
                   <td>Credit Management</td>
-                <td>FI</td>
-                <td>Medium</td>
+                  <td>FI</td>
+                  <td>Medium</td>
                 </tr>
                 <tr>
                   <td>
                     <input type="checkbox" id="object-12" name="objects" value="12">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-12" name="dq_objects" value="12">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-12" name="dv_objects" value="12">
                   </td>
                   <td>Characteristics</td>
                   <td>PP</td>
@@ -185,6 +310,12 @@
                   <td>
                     <input type="checkbox" id="object-13" name="objects" value="13">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-13" name="dq_objects" value="13">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-13" name="dv_objects" value="13">
+                  </td>
                   <td>Class</td>
                   <td>PP</td>
                   <td>Low</td>
@@ -192,6 +323,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-14" name="objects" value="14">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-14" name="dq_objects" value="14">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-14" name="dv_objects" value="14">
                   </td>
                   <td>Commodity Codes-Creation</td>
                   <td>P2P</td>
@@ -201,6 +338,12 @@
                   <td>
                     <input type="checkbox" id="object-15" name="objects" value="15">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-15" name="dq_objects" value="15">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-15" name="dv_objects" value="15">
+                  </td>
                   <td>Product Classification</td>
                   <td>P2P</td>
                   <td>Low</td>
@@ -208,6 +351,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-16" name="objects" value="16">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-16" name="dq_objects" value="16">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-16" name="dv_objects" value="16">
                   </td>
                   <td>Work Center</td>
                   <td>PP</td>
@@ -217,6 +366,12 @@
                   <td>
                     <input type="checkbox" id="object-17" name="objects" value="17">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-17" name="dq_objects" value="17">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-17" name="dv_objects" value="17">
+                  </td>
                   <td>Purchase Contract</td>
                   <td>P2P</td>
                   <td>High</td>
@@ -224,6 +379,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-18" name="objects" value="18">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-18" name="dq_objects" value="18">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-18" name="dv_objects" value="18">
                   </td>
                   <td>Source List</td>
                   <td>P2P</td>
@@ -233,6 +394,12 @@
                   <td>
                     <input type="checkbox" id="object-19" name="objects" value="19">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-19" name="dq_objects" value="19">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-19" name="dv_objects" value="19">
+                  </td>
                   <td>QM/PM - Catalog code group/code</td>
                   <td>QM</td>
                   <td>Very Low</td>
@@ -241,13 +408,25 @@
                   <td>
                     <input type="checkbox" id="object-20" name="objects" value="20">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-20" name="dq_objects" value="20">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-20" name="dv_objects" value="20">
+                  </td>
                   <td>Selected set</td>
-                <td>QM</td>
-                <td>Medium</td>
+                  <td>QM</td>
+                  <td>Medium</td>
                 </tr>
                 <tr>
                   <td>
                     <input type="checkbox" id="object-21" name="objects" value="21">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-21" name="dq_objects" value="21">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-21" name="dv_objects" value="21">
                   </td>
                   <td>Selected set code</td>
                   <td>QM</td>
@@ -257,6 +436,12 @@
                   <td>
                     <input type="checkbox" id="object-22" name="objects" value="22">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-22" name="dq_objects" value="22">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-22" name="dv_objects" value="22">
+                  </td>
                   <td>Inspection Method</td>
                   <td>QM</td>
                   <td>Medium</td>
@@ -264,6 +449,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-23" name="objects" value="23">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-23" name="dq_objects" value="23">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-23" name="dv_objects" value="23">
                   </td>
                   <td>Sampling Procedures</td>
                   <td>QM</td>
@@ -273,6 +464,12 @@
                   <td>
                     <input type="checkbox" id="object-24" name="objects" value="24">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-24" name="dq_objects" value="24">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-24" name="dv_objects" value="24">
+                  </td>
                   <td>Master Recipe</td>
                   <td>QM</td>
                   <td>Very High</td>
@@ -280,6 +477,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-25" name="objects" value="25">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-25" name="dq_objects" value="25">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-25" name="dv_objects" value="25">
                   </td>
                   <td>Material BOM</td>
                   <td>PP</td>
@@ -289,6 +492,12 @@
                   <td>
                     <input type="checkbox" id="object-26" name="objects" value="26">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-26" name="dq_objects" value="26">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-26" name="dv_objects" value="26">
+                  </td>
                   <td>Material Batch Classification</td>
                   <td>PP</td>
                   <td>Medium</td>
@@ -296,6 +505,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-27" name="objects" value="27">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-27" name="dq_objects" value="27">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-27" name="dv_objects" value="27">
                   </td>
                   <td>Batch Unique at mat and client level</td>
                   <td>PP</td>
@@ -305,6 +520,12 @@
                   <td>
                     <input type="checkbox" id="object-28" name="objects" value="28">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-28" name="dq_objects" value="28">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-28" name="dv_objects" value="28">
+                  </td>
                   <td>Inspection Characteristic</td>
                   <td>QM</td>
                   <td>Medium</td>
@@ -312,6 +533,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-29" name="objects" value="29">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-29" name="dq_objects" value="29">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-29" name="dv_objects" value="29">
                   </td>
                   <td>Dynamic Modification Rule</td>
                   <td>QM</td>
@@ -321,6 +548,12 @@
                   <td>
                     <input type="checkbox" id="object-30" name="objects" value="30">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-30" name="dq_objects" value="30">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-30" name="dv_objects" value="30">
+                  </td>
                   <td>Inspection Plan</td>
                   <td>QM</td>
                   <td>Medium</td>
@@ -328,6 +561,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-31" name="objects" value="31">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-31" name="dq_objects" value="31">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-31" name="dv_objects" value="31">
                   </td>
                   <td>Quality View Extention</td>
                   <td>QM</td>
@@ -337,6 +576,12 @@
                   <td>
                     <input type="checkbox" id="object-32" name="objects" value="32">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-32" name="dq_objects" value="32">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-32" name="dv_objects" value="32">
+                  </td>
                   <td>Material Inspection Setup</td>
                   <td>QM</td>
                   <td>Low</td>
@@ -344,6 +589,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-33" name="objects" value="33">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-33" name="dq_objects" value="33">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-33" name="dv_objects" value="33">
                   </td>
                   <td>Routings</td>
                   <td>PP</td>
@@ -353,6 +604,12 @@
                   <td>
                     <input type="checkbox" id="object-34" name="objects" value="34">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-34" name="dq_objects" value="34">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-34" name="dv_objects" value="34">
+                  </td>
                   <td>Production Versions</td>
                   <td>PP</td>
                   <td>Medium</td>
@@ -360,6 +617,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-35" name="objects" value="35">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-35" name="dq_objects" value="35">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-35" name="dv_objects" value="35">
                   </td>
                   <td>Purchasing info records</td>
                   <td>P2P</td>
@@ -369,6 +632,12 @@
                   <td>
                     <input type="checkbox" id="object-36" name="objects" value="36">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-36" name="dq_objects" value="36">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-36" name="dv_objects" value="36">
+                  </td>
                   <td>Certificate profile creation</td>
                   <td>QM</td>
                   <td>Medium</td>
@@ -376,6 +645,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-37" name="objects" value="37">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-37" name="dq_objects" value="37">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-37" name="dv_objects" value="37">
                   </td>
                   <td>Certificate profile assignment</td>
                   <td>QM</td>
@@ -385,6 +660,12 @@
                   <td>
                     <input type="checkbox" id="object-38" name="objects" value="38">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-38" name="dq_objects" value="38">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-38" name="dv_objects" value="38">
+                  </td>
                   <td>Output Condition Record</td>
                   <td>QM</td>
                   <td>Medium</td>
@@ -392,6 +673,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-39" name="objects" value="39">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-39" name="dq_objects" value="39">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-39" name="dv_objects" value="39">
                   </td>
                   <td>Condition record for pricing (general template)</td>
                   <td>SD</td>
@@ -401,6 +688,12 @@
                   <td>
                     <input type="checkbox" id="object-40" name="objects" value="40">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-40" name="dq_objects" value="40">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-40" name="dv_objects" value="40">
+                  </td>
                   <td>Maintenance Workcenter</td>
                   <td>PM</td>
                   <td>Medium</td>
@@ -408,6 +701,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-41" name="objects" value="41">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-41" name="dq_objects" value="41">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-41" name="dv_objects" value="41">
                   </td>
                   <td>Functional Location</td>
                   <td>PM</td>
@@ -417,6 +716,12 @@
                   <td>
                     <input type="checkbox" id="object-42" name="objects" value="42">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-42" name="dq_objects" value="42">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-42" name="dv_objects" value="42">
+                  </td>
                   <td>Equipment</td>
                   <td>PM</td>
                   <td>Very High</td>
@@ -424,6 +729,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-43" name="objects" value="43">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-43" name="dq_objects" value="43">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-43" name="dv_objects" value="43">
                   </td>
                   <td>General maintenance task list</td>
                   <td>PM</td>
@@ -433,6 +744,12 @@
                   <td>
                     <input type="checkbox" id="object-44" name="objects" value="44">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-44" name="dq_objects" value="44">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-44" name="dv_objects" value="44">
+                  </td>
                   <td>Maintenance Plan</td>
                   <td>PM</td>
                   <td>Medium</td>
@@ -440,6 +757,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-45" name="objects" value="45">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-45" name="dq_objects" value="45">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-45" name="dv_objects" value="45">
                   </td>
                   <td>Maintenance Item</td>
                   <td>PM</td>
@@ -449,6 +772,12 @@
                   <td>
                     <input type="checkbox" id="object-46" name="objects" value="46">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-46" name="dq_objects" value="46">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-46" name="dv_objects" value="46">
+                  </td>
                   <td>Customer Material</td>
                   <td>SD</td>
                   <td>Medium</td>
@@ -456,6 +785,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-47" name="objects" value="47">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-47" name="dq_objects" value="47">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-47" name="dv_objects" value="47">
                   </td>
                   <td>EWM Warehouse Bin Template</td>
                   <td>MM</td>
@@ -465,6 +800,12 @@
                   <td>
                     <input type="checkbox" id="object-48" name="objects" value="48">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-48" name="dq_objects" value="48">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-48" name="dv_objects" value="48">
+                  </td>
                   <td>EWM Product Master</td>
                   <td>MM</td>
                   <td>High</td>
@@ -472,6 +813,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-49" name="objects" value="49">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-49" name="dq_objects" value="49">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-49" name="dv_objects" value="49">
                   </td>
                   <td>EWM Packaging Material</td>
                   <td>MM</td>
@@ -481,6 +828,12 @@
                   <td>
                     <input type="checkbox" id="object-50" name="objects" value="50">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-50" name="dq_objects" value="50">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-50" name="dv_objects" value="50">
+                  </td>
                   <td>EWM Inbound Pack Spec</td>
                   <td>MM</td>
                   <td>High</td>
@@ -488,6 +841,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-51" name="objects" value="51">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-51" name="dq_objects" value="51">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-51" name="dv_objects" value="51">
                   </td>
                   <td>EWM PSA Control Cycle</td>
                   <td>MM</td>
@@ -497,6 +856,12 @@
                   <td>
                     <input type="checkbox" id="object-52" name="objects" value="52">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-52" name="dq_objects" value="52">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-52" name="dv_objects" value="52">
+                  </td>
                   <td>Fixed assets incl. Balances & transactions</td>
                   <td>FI</td>
                   <td>Very High</td>
@@ -504,6 +869,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-53" name="objects" value="53">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-53" name="dq_objects" value="53">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-53" name="dv_objects" value="53">
                   </td>
                   <td>Bank account balance</td>
                   <td>FI</td>
@@ -513,6 +884,12 @@
                   <td>
                     <input type="checkbox" id="object-54" name="objects" value="54">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-54" name="dq_objects" value="54">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-54" name="dv_objects" value="54">
+                  </td>
                   <td>Accounts payable open item</td>
                   <td>FI</td>
                   <td>High</td>
@@ -520,6 +897,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-55" name="objects" value="55">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-55" name="dq_objects" value="55">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-55" name="dv_objects" value="55">
                   </td>
                   <td>Accounts receivable open item</td>
                   <td>FI</td>
@@ -529,6 +912,12 @@
                   <td>
                     <input type="checkbox" id="object-56" name="objects" value="56">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-56" name="dq_objects" value="56">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-56" name="dv_objects" value="56">
+                  </td>
                   <td>G/L Acc balance & open/line item</td>
                   <td>FI</td>
                   <td>High</td>
@@ -536,6 +925,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-57" name="objects" value="57">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-57" name="dq_objects" value="57">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-57" name="dv_objects" value="57">
                   </td>
                   <td>Sales order (only open SO)</td>
                   <td>SD</td>
@@ -545,6 +940,12 @@
                   <td>
                     <input type="checkbox" id="object-58" name="objects" value="58">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-58" name="dq_objects" value="58">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-58" name="dv_objects" value="58">
+                  </td>
                   <td>Purchase order (only open PO)</td>
                   <td>P2P</td>
                   <td>High</td>
@@ -552,6 +953,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-59" name="objects" value="59">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-59" name="dq_objects" value="59">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-59" name="dv_objects" value="59">
                   </td>
                   <td>Inventory Balance (IM Inventory)</td>
                   <td>MM</td>
@@ -561,6 +968,12 @@
                   <td>
                     <input type="checkbox" id="object-60" name="objects" value="60">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-60" name="dq_objects" value="60">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-60" name="dv_objects" value="60">
+                  </td>
                   <td>EWM Warehouse Inventory</td>
                   <td>MM</td>
                   <td>Medium</td>
@@ -568,6 +981,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-61" name="objects" value="61">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-61" name="dq_objects" value="61">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-61" name="dv_objects" value="61">
                   </td>
                   <td>Project Definition</td>
                   <td>PS</td>
@@ -577,6 +996,12 @@
                   <td>
                     <input type="checkbox" id="object-62" name="objects" value="62">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-62" name="dq_objects" value="62">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-62" name="dv_objects" value="62">
+                  </td>
                   <td>WBS elements</td>
                   <td>PS</td>
                   <td>Medium</td>
@@ -584,6 +1009,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-63" name="objects" value="63">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-63" name="dq_objects" value="63">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-63" name="dv_objects" value="63">
                   </td>
                   <td>Real Estate Contract</td>
                   <td>ReFX</td>
@@ -593,6 +1024,12 @@
                   <td>
                     <input type="checkbox" id="object-64" name="objects" value="64">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-64" name="dq_objects" value="64">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-64" name="dv_objects" value="64">
+                  </td>
                   <td>Building</td>
                   <td>ReFX</td>
                   <td>Low</td>
@@ -600,6 +1037,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-65" name="objects" value="65">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-65" name="dq_objects" value="65">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-65" name="dv_objects" value="65">
                   </td>
                   <td>Land</td>
                   <td>ReFX</td>
@@ -609,6 +1052,12 @@
                   <td>
                     <input type="checkbox" id="object-66" name="objects" value="66">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-66" name="dq_objects" value="66">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-66" name="dv_objects" value="66">
+                  </td>
                   <td>Rental Object</td>
                   <td>ReFX</td>
                   <td>Low</td>
@@ -616,6 +1065,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-67" name="objects" value="67">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-67" name="dq_objects" value="67">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-67" name="dv_objects" value="67">
                   </td>
                   <td>Business Entities</td>
                   <td>ReFX</td>
@@ -625,6 +1080,12 @@
                   <td>
                     <input type="checkbox" id="object-68" name="objects" value="68">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-68" name="dq_objects" value="68">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-68" name="dv_objects" value="68">
+                  </td>
                   <td>Architectural object</td>
                   <td>ReFX</td>
                   <td>Low</td>
@@ -632,6 +1093,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-69" name="objects" value="69">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-69" name="dq_objects" value="69">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-69" name="dv_objects" value="69">
                   </td>
                   <td>Merchandise category hierarchy</td>
                   <td>IS-Retail</td>
@@ -641,6 +1108,12 @@
                   <td>
                     <input type="checkbox" id="object-70" name="objects" value="70">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-70" name="dq_objects" value="70">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-70" name="dv_objects" value="70">
+                  </td>
                   <td>Article/Product Hierarchy</td>
                   <td>IS-Retail</td>
                   <td>Very Low</td>
@@ -648,6 +1121,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-71" name="objects" value="71">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-71" name="dq_objects" value="71">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-71" name="dv_objects" value="71">
                   </td>
                   <td>Site Master (Store/DC/Warranty/WH/HQ)</td>
                   <td>IS-Retail</td>
@@ -657,6 +1136,12 @@
                   <td>
                     <input type="checkbox" id="object-72" name="objects" value="72">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-72" name="dq_objects" value="72">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-72" name="dv_objects" value="72">
+                  </td>
                   <td>Merchandise category</td>
                   <td>IS-Retail</td>
                   <td>Very Low</td>
@@ -664,6 +1149,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-73" name="objects" value="73">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-73" name="dq_objects" value="73">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-73" name="dv_objects" value="73">
                   </td>
                   <td>Site grouping</td>
                   <td>IS-Retail</td>
@@ -673,6 +1164,12 @@
                   <td>
                     <input type="checkbox" id="object-74" name="objects" value="74">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-74" name="dq_objects" value="74">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-74" name="dv_objects" value="74">
+                  </td>
                   <td>Business Partner (Customer Master data)</td>
                   <td>IS-Retail</td>
                   <td>Very Low</td>
@@ -680,6 +1177,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-75" name="objects" value="75">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-75" name="dq_objects" value="75">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-75" name="dv_objects" value="75">
                   </td>
                   <td>Item master/Product Master/Article master</td>
                   <td>IS-Retail</td>
@@ -689,6 +1192,12 @@
                   <td>
                     <input type="checkbox" id="object-76" name="objects" value="76">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-76" name="dq_objects" value="76">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-76" name="dv_objects" value="76">
+                  </td>
                   <td>Retail Pricing</td>
                   <td>IS-Retail</td>
                   <td>Very Low</td>
@@ -696,6 +1205,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-77" name="objects" value="77">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-77" name="dq_objects" value="77">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-77" name="dv_objects" value="77">
                   </td>
                   <td>Retail Promotions & Markdowns</td>
                   <td>IS-Retail</td>
@@ -705,6 +1220,12 @@
                   <td>
                     <input type="checkbox" id="object-78" name="objects" value="78">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-78" name="dq_objects" value="78">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-78" name="dv_objects" value="78">
+                  </td>
                   <td>Assortment</td>
                   <td>IS-Retail</td>
                   <td>Very Low</td>
@@ -712,6 +1233,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-79" name="objects" value="79">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-79" name="dq_objects" value="79">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-79" name="dv_objects" value="79">
                   </td>
                   <td>Suppliers Rebate & Contracts</td>
                   <td>IS-Retail</td>
@@ -721,6 +1248,12 @@
                   <td>
                     <input type="checkbox" id="object-80" name="objects" value="80">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-80" name="dq_objects" value="80">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-80" name="dv_objects" value="80">
+                  </td>
                   <td>Open Inventory</td>
                   <td>IS-Retail</td>
                   <td>Very Low</td>
@@ -728,6 +1261,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-81" name="objects" value="81">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-81" name="dq_objects" value="81">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-81" name="dv_objects" value="81">
                   </td>
                   <td>Open Stock transfer Order</td>
                   <td>IS-Retail</td>
@@ -737,6 +1276,12 @@
                   <td>
                     <input type="checkbox" id="object-82" name="objects" value="82">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-82" name="dq_objects" value="82">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-82" name="dv_objects" value="82">
+                  </td>
                   <td>Open Purchase Orders in (Trade)</td>
                   <td>IS-Retail</td>
                   <td>Very Low</td>
@@ -744,6 +1289,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-83" name="objects" value="83">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-83" name="dq_objects" value="83">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-83" name="dv_objects" value="83">
                   </td>
                   <td>Statistical Key figure</td>
                   <td>CO</td>
@@ -753,6 +1304,12 @@
                   <td>
                     <input type="checkbox" id="object-84" name="objects" value="84">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-84" name="dq_objects" value="84">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-84" name="dv_objects" value="84">
+                  </td>
                   <td>Internal order</td>
                   <td>CO</td>
                   <td>Very Low</td>
@@ -760,6 +1317,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-85" name="objects" value="85">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-85" name="dq_objects" value="85">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-85" name="dv_objects" value="85">
                   </td>
                   <td>Activity type</td>
                   <td>FI</td>
@@ -769,6 +1332,12 @@
                   <td>
                     <input type="checkbox" id="object-86" name="objects" value="86">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-86" name="dq_objects" value="86">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-86" name="dv_objects" value="86">
+                  </td>
                   <td>Client segmentation - Credit (2 templates)</td>
                   <td>FI</td>
                   <td>Very Low</td>
@@ -776,6 +1345,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-87" name="objects" value="87">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-87" name="dq_objects" value="87">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-87" name="dv_objects" value="87">
                   </td>
                   <td>Employee</td>
                   <td>HCM</td>
@@ -785,6 +1360,12 @@
                   <td>
                     <input type="checkbox" id="object-88" name="objects" value="88">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-88" name="dq_objects" value="88">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-88" name="dv_objects" value="88">
+                  </td>
                   <td>Commodity codes material assignment</td>
                   <td>MM</td>
                   <td>Very Low</td>
@@ -793,13 +1374,25 @@
                   <td>
                     <input type="checkbox" id="object-89" name="objects" value="89">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-89" name="dq_objects" value="89">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-89" name="dv_objects" value="89">
+                  </td>
                   <td>Object classification</td>
-                <td>MM</td>
-                <td>Very Low</td>
+                  <td>MM</td>
+                  <td>Very Low</td>
                 </tr>
                 <tr>
                   <td>
                     <input type="checkbox" id="object-90" name="objects" value="90">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-90" name="dq_objects" value="90">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-90" name="dv_objects" value="90">
                   </td>
                   <td>Material Variant</td>
                   <td>MM</td>
@@ -809,6 +1402,12 @@
                   <td>
                     <input type="checkbox" id="object-91" name="objects" value="91">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-91" name="dq_objects" value="91">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-91" name="dv_objects" value="91">
+                  </td>
                   <td>Material long text</td>
                   <td>PP</td>
                   <td>Very Low</td>
@@ -816,6 +1415,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-92" name="objects" value="92">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-92" name="dq_objects" value="92">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-92" name="dv_objects" value="92">
                   </td>
                   <td>Open production order</td>
                   <td>PP</td>
@@ -825,6 +1430,12 @@
                   <td>
                     <input type="checkbox" id="object-93" name="objects" value="93">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-93" name="dq_objects" value="93">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-93" name="dv_objects" value="93">
+                  </td>
                   <td>PIR(Planned Independent Requirement) for forecast</td>
                   <td>PP</td>
                   <td>Very Low</td>
@@ -832,6 +1443,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-94" name="objects" value="94">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-94" name="dq_objects" value="94">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-94" name="dv_objects" value="94">
                   </td>
                   <td>Setup group assignment (routing)</td>
                   <td>PP</td>
@@ -841,6 +1458,12 @@
                   <td>
                     <input type="checkbox" id="object-95" name="objects" value="95">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-95" name="dq_objects" value="95">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-95" name="dv_objects" value="95">
+                  </td>
                   <td>Quality info record</td>
                   <td>QM</td>
                   <td>Very Low</td>
@@ -848,6 +1471,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-96" name="objects" value="96">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-96" name="dq_objects" value="96">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-96" name="dv_objects" value="96">
                   </td>
                   <td>Email determination in Sales</td>
                   <td>SD</td>
@@ -857,6 +1486,12 @@
                   <td>
                     <input type="checkbox" id="object-97" name="objects" value="97">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-97" name="dq_objects" value="97">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-97" name="dv_objects" value="97">
+                  </td>
                   <td>Sales contracts (open items)</td>
                   <td>SD</td>
                   <td>Very Low</td>
@@ -864,6 +1499,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-98" name="objects" value="98">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-98" name="dq_objects" value="98">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-98" name="dv_objects" value="98">
                   </td>
                   <td>Location</td>
                   <td>TM</td>
@@ -873,6 +1514,12 @@
                   <td>
                     <input type="checkbox" id="object-99" name="objects" value="99">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-99" name="dq_objects" value="99">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-99" name="dv_objects" value="99">
+                  </td>
                   <td>Charge type</td>
                   <td>TM</td>
                   <td>Very Low</td>
@@ -881,6 +1528,12 @@
                   <td>
                     <input type="checkbox" id="object-100" name="objects" value="100">
                   </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-100" name="dq_objects" value="100">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-100" name="dv_objects" value="100">
+                  </td>
                   <td>Freight agreement</td>
                   <td>TM</td>
                   <td>Very Low</td>
@@ -888,6 +1541,12 @@
                 <tr>
                   <td>
                     <input type="checkbox" id="object-101" name="objects" value="101">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dq-object-101" name="dq_objects" value="101">
+                  </td>
+                  <td>
+                    <input type="checkbox" id="dv-object-101" name="dv_objects" value="101">
                   </td>
                   <td>Transportation zone</td>
                   <td>TM</td>
@@ -908,20 +1567,53 @@
     <script>
       const input = document.querySelector('#search-box');
       const objectList = document.querySelector('#object-list');
+      const filterColumn = document.querySelector('#filter-column');
+      const radio = document.querySelector('#select-all-radio');
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     
       input.addEventListener('input', function () {
         const searchTerm = this.value.toLowerCase();
         const rows = objectList.rows;
+        const columnIdx = parseInt(filterColumn.value); // get selected column index
         for (let i = 0; i < rows.length; i++) {
-          const objectName = rows[i].cells[1].textContent.toLowerCase();
-          if (objectName.indexOf(searchTerm) !== -1) {
+          const cellText = rows[i].cells[columnIdx].textContent.toLowerCase();
+          if (cellText.indexOf(searchTerm) !== -1) {
             rows[i].style.display = "table-row";
           } else {
             rows[i].style.display = "none";
           }
         }
+        // Reset "select all" checkbox to unchecked when search term changes
+        radio.checked = false;
       });
-    </script>    
+    
+      radio.addEventListener('change', function () {
+        checkboxes.forEach(function (checkbox) {
+          if (checkbox.closest('tr').style.display !== 'none') {
+            checkbox.checked = radio.checked;
+          }
+        });
+      });
+    
+      checkboxes.forEach(function (checkbox) {
+        checkbox.addEventListener('change', function () {
+          let allChecked = true;
+          checkboxes.forEach(function (checkbox) {
+            if (!checkbox.checked && checkbox.closest('tr').style.display !== 'none') {
+              allChecked = false;
+            }
+          });
+          radio.checked = allChecked;
+        });
+      });
+      
+      // Add event listener to the document to detect clicks outside the radio button
+      document.addEventListener('click', function(e) {
+        if (e.target !== radio) {
+          radio.checked = false;
+        }
+      });
+    </script>                                
 
     <footer>
       <div class="f">

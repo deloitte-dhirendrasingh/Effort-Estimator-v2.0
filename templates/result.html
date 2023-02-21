@@ -184,12 +184,20 @@
             <div class="card-body">
               <table class="table table-striped">
                 <tr>
-                  <th class="text-left header">BODS and Data Load Jobs</th>
+                  <th class="text-left header">BODS ETLR and Data Load Jobs</th>
                   <td class="text-right theader">{{ result1 }}</td>
                 </tr>
                 <tr>
-                  <th class="text-left header">BODS Hours</th>
+                  <th class="text-left header">BODS Data Quality</th>
+                  <td class="text-right theader">{{ result48 }}</td>
+                </tr>
+                <tr>
+                  <th class="text-left header">BODS ETLR Hours</th>
                   <td class="text-right theader">{{ result2 }}</td>
+                </tr>
+                <tr>
+                  <th class="text-left header">Data Quality Hours</th>
+                  <td class="text-right theader">{{ result54 }}</td>
                 </tr>
                 <tr>
                   <th class="text-left header">Data Load Hours</th>
@@ -229,7 +237,7 @@
           <h5 class="title">Phase 1</h5>
           <table class="table table-bordered">
             <tr>
-              <th class="text-left header" colspan="6">BODS Jobs</th>
+              <th class="text-left header" colspan="6">BODS ETLR Jobs</th>
             </tr>
             <tr>
               <th></th>
@@ -257,6 +265,38 @@
               <td>{{ result25 }}</td>
               <td>{{ result26 }}</td>
               <td>{{ result27 }}</td>
+            </tr>
+          </table>
+          <table class="table table-bordered">
+            <tr>
+              <th class="text-left header" colspan="6">BODS Data Quality</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>V.Low</th>
+              <th>Low</th>
+              <th>Medium</th>
+              <th>High</th>
+              <th>V.High</th>
+              <th>Total</th>
+            </tr>
+            <tr>
+              <th>Objects</th>
+              <td>{{ result43 }}</td>
+              <td>{{ result44 }}</td>
+              <td>{{ result45 }}</td>
+              <td>{{ result46 }}</td>
+              <td>{{ result47 }}</td>
+              <td>{{ result48 }}</td>
+            </tr>
+            <tr>
+              <th>Hours</th>
+              <td>{{ result49 }}</td>
+              <td>{{ result50 }}</td>
+              <td>{{ result51 }}</td>
+              <td>{{ result52 }}</td>
+              <td>{{ result53 }}</td>
+              <td>{{ result54 }}</td>
             </tr>
           </table>
           <table class="table table-bordered">
@@ -308,19 +348,19 @@
               <th>Total</th>
             </tr>
             <tr>
-              <td class="text-left header">BODS Jobs</td>
+              <td class="text-left header">BODS ETLR Jobs</td>
               <td>{{ result27 }}</td>
               <td>{{ result27 }}</td>
             </tr>
             <tr>
               <td class="text-left header">BODS Data Quality</td>
-              <td></td>
-              <td></td>
+              <td>{{ result54 }}</td>
+              <td>{{ result54 }}</td>
             </tr>
             <tr>
               <td class="text-left header">Design & Build (including Unit Test)</td>
-              <th>{{ result27 }}</th>
-              <th>{{ result27 }}</th>
+              <th>{{ result55 }}</th>
+              <th>{{ result55 }}</th>
             </tr>
             <tr>
               <th class="text-left header">Data Load Effort Mock Cycle 1</th>
