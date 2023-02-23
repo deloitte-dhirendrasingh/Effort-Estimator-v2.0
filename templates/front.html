@@ -146,47 +146,82 @@
   .nav-white.visible {
   transition-delay: 0.4s;
   }
-  .close-btn {
+  nav-open{
+  margin-left: 20%;
+  transition: margin-left 0.5s;
+  }
+  .close-btn{
   opacity: 0.3;
   position: absolute;
   top: 40px;
   right: 30px;
   }
-  .list {
+  .list{
   list-style-type: none;
   padding: 0;
   }
-  .list li {
+  .list li{
   margin: 20px 0;
   }
-  .list li a {
+  .list li a{
   color: rgb(34, 31, 31);
   font-size: 14px;
   text-decoration: none;
   text-transform: uppercase;
   }
-  .list ul {
+  .list ul{
   list-style-type: none;
   padding-left: 20px;
   }
-  /* Styling the primary button */
+
+  /* Styling the submit button */
   .sub-button{
-  background: linear-gradient(to bottom, #86bc25, #53b900);
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.9rem 2rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 500px;
+  overflow: hidden;
+  background: #86bc25;
+  color: ghostwhite;
+  }
+  .sub-button span{
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+  }
+  .sub-button:hover span{
   color: black;
-  transition: background-color 0.5s ease;
-  border-radius: 10px;
-  border: 1px solid rgb(90, 90, 90);
-  width: 260px;
-  height: 40px;
-  }     
-  /* Adding hover effect to the button */
-  .sub-button:hover{
-  background: linear-gradient(to bottom, #d1d1d1, rgb(90, 90, 90));
   }
-  nav-open {
-  margin-left: 20%;
-  transition: margin-left 0.5s;
+  .sub-button::before,
+  .sub-button::after{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
   }
+  .sub-button::before{
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+  }
+  .sub-button:hover::before{
+  transform: translate3d(100%, 0, 0);
+  }
+
   #faq{
   padding-right: 10px;
   }
@@ -208,7 +243,9 @@
   <p class="text">ETLR Effort Estimator</p>
 
   <form method="POST" action="{{ url_for('index') }}">
-    <input type="submit" value="Try Our Effort Estimator Tool Now" class="sub-button">
+    <button class="sub-button">
+      <span>Try Our Effort Estimator Tool Now</span>
+    </button>
   </form>
 
   <main>

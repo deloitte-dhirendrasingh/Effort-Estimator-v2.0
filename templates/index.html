@@ -22,13 +22,6 @@
         margin: 0;
         padding: 0;
         }
-        .search-box-right-corner {
-        position: absolute;
-        top: 10px;
-        right: 9px;
-        outline: none;
-        border-radius: 5px;
-        }
         .radio-button-right-corner{
         position: absolute;
         top: 58px;
@@ -46,28 +39,6 @@
         border: none;
         padding: 1px;
         border-radius: 2px;
-        }
-        .filter-name-right-corner {
-        position: absolute;
-        top: 10px;
-        right: 19.6rem;
-        outline: none;
-        border: none;
-        padding: 1px;
-        border-radius: 2px;
-        }
-        .filter-bar-right-corner {
-        position: absolute;
-        top: 14px;
-        right: 12.80rem;
-        outline: none;
-        border: none;
-        padding: 1px;
-        border-radius: 2px;
-        font-size: 0.9rem;
-        background-color: #f2f2f2;
-        font-style: oblique;
-        color: #666;
         }
         th, td{
         padding-right: 25px;
@@ -93,6 +64,81 @@
         .pt{
         margin-bottom: 30px;
         }
+
+        .search-container {
+        position: relative;
+        --size-button: 40px;
+        }
+
+        .search-box-right-corner {
+        position: absolute;
+        bottom: 24px;
+        right: 2px;
+        padding-left: var(--size-button);
+        height: var(--size-button);
+        font-size: 15px;
+        border: none;
+        color: #191A1E;
+        outline: none;
+        width: var(--size-button);
+        transition: all ease 0.3s;
+        background-color: #fff;
+        box-shadow: 1.5px 1.5px 3px #0e0e0e, -1.5px -1.5px 3px rgb(95 94 94 / 25%), inset 0px 0px 0px #0e0e0e, inset 0px -0px 0px #5f5e5e;
+        border-radius: 50px;
+        cursor: pointer;
+        }
+
+        .search-box-right-corner:focus,
+        .search-box-right-corner:not(:invalid) {
+        width: 215px;
+        cursor: text;
+        box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%), inset 0.5px 0.5px 2px #0e0e0e, inset -1px -1px 2px #5f5e5e;
+        }
+
+        .search-box-right-corner:focus + .icon,
+        .search-box-right-corner:not(:invalid) + .icon {
+        pointer-events: all;
+        cursor: pointer;
+        }
+
+        .search-container .icon {
+        position: absolute;
+        width: var(--size-button);
+        height: var(--size-button);
+        bottom: 25.6px;
+        right: 2px;
+        padding: 8px;
+        pointer-events: none;
+        }
+
+        .search-container .icon svg {
+        width: 100%;
+        height: 100%;
+        }
+
+        .filter-name-right-corner {
+        position: absolute;
+        top: 12.3px;
+        right: 10.8rem;
+        outline: none;
+        border: none;
+        padding: 1px;
+        border-radius: 2px;
+        font-size: 0.95rem;
+        }
+        
+        .filter-bar-right-corner {
+        position: absolute;
+        top: 14px;
+        right: 4rem;
+        outline: none;
+        border: none;
+        padding: 1px;
+        border-radius: 2px;
+        font-size: 0.9rem;
+        background-color: #f2f2f2;
+        color: #666;
+        }
       </style>    
     </head>
 
@@ -109,8 +155,7 @@
           <form method="GET" action="{{ url_for('index') }}">
             <div class="card-header">
               <h4 class="card-title">Select Objects</h4>
-              <label for="search-box"></label>
-              <input type="search" class="search-box-right-corner" id="search-box" placeholder="Enter search term">
+              
               <div>
                 <label for="filter-column" class="filter-name-right-corner">Filter by:</label>
                 <select id="filter-column" class="filter-bar-right-corner">
@@ -119,6 +164,19 @@
                   <option value="5">Complexity</option>
                 </select>
               </div>
+
+              <div class="search-container">
+                <label for="search-box"></label>
+                <input placeholder="Enter search term" required="" id="search-box" class="search-box-right-corner" name="text" type="text">
+                <div class="icon">
+                    <svg viewBox="0 0 512 512" class="ionicon" xmlns="http://www.w3.org/2000/svg">
+                        <title>Search</title>
+                        <path stroke-width="32" stroke-miterlimit="10" stroke="currentColor" fill="none" d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"></path>
+                        <path d="M338.29 338.29L448 448" stroke-width="32" stroke-miterlimit="10" stroke-linecap="round" stroke="currentColor" fill="none"></path>
+                    </svg>
+                </div>
+              </div>
+              
               <div>
                 <input type="radio" class="radio-button-right-corner" name="select-all-radio" id="select-all-radio" value="all">
                 <label for="select-all-radio" class="radio-button-name-right-corner">Select all objects</label>
