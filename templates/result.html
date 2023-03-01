@@ -8,10 +8,10 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
       <style>
         .card-header{
-          height: 50px;
-          width: 1086px;
-          background-color: #86bc25;
-          color: black;
+        height: 50px;
+        width: 1086px;
+        background-color: #86bc25;
+        color: black;
         }
         .card-header:hover{
         background-color: #86bc25;
@@ -27,20 +27,6 @@
         .card-title:active{
           transform: scale(0.8);
         }
-        /* Style the primary button */
-        .sub-button{
-          background: linear-gradient(to bottom, #86bc25, #3e8e41);
-          color: black;
-          transition: background-color 0.5s ease;
-          border-radius: 10px;
-          border: 1px solid rgb(90, 90, 90);
-          width: 200px;
-          height: 40px;
-        }     
-        /* Add hover effect to the button */
-        .sub-button:hover{
-          background: linear-gradient(to bottom, whitesmoke, rgb(90, 90, 90));
-        }  
         .header{
         text-align: left;
         }
@@ -83,28 +69,157 @@
         width: 1243px;
         z-index: 10;  
         }
-        .close-btn{
-        background: linear-gradient(to bottom, grey, white);
-        color: black;
-        transition: background-color 0.5s ease;
-        border-radius: 10px;
-        border: 1px solid rgb(90, 90, 90);
-        width:22px;
-        height: 22px;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        top: 10px;
-        right: 10px;
-        font-size: 15px;
-        font-weight: 900;
-        }     
-        .close-btn:hover{
-        background: linear-gradient(to bottom, whitesmoke, rgb(90, 90, 90));
-        }
         .title{
         font-weight: 650;
+        }
+
+        .download-btn{
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        border: none;
+        background: none;
+        color: #0f1923;
+        cursor: pointer;
+        position: relative;
+        padding: 8px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 14px;
+        transition: all .15s ease;
+        }
+
+        .download-btn::before,
+        .download-btn::after{
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        left: 0;
+        height: calc(50% - 5px);
+        border: 1px solid #7D8082;
+        transition: all .15s ease;
+        }
+
+        .download-btn::before{
+        top: 0;
+        border-bottom-width: 0;
+        }
+
+        .download-btn::after{
+        bottom: 0;
+        border-top-width: 0;
+        }
+
+        .download-btn:active,
+        .download-btn:focus{
+        outline: none;
+        }
+
+        .download-btn:active::before,
+        .download-btn:active::after{
+        right: 3px;
+        left: 3px;
+        }
+
+        .download-btn:active::before{
+        top: 3px;
+        }
+
+        .download-btn:active::after{
+        bottom: 3px;
+        }
+
+        .button_lg{
+        position: relative;
+        display: block;
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #0f1923;
+        overflow: hidden;
+        box-shadow: inset 0px 0px 0px 1px transparent;
+        }
+
+        .button_lg::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 2px;
+        background-color: #0f1923;
+        }
+
+        .button_lg::after{
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 4px;
+        height: 4px;
+        background-color: #0f1923;
+        transition: all .2s ease;
+        }
+
+        .button_sl{
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: -1px;
+        left: -8px;
+        width: 0;
+        background: linear-gradient(to bottom, #86bc25, #3e8e41);
+        transform: skew(-15deg);
+        transition: all .2s ease;
+        }
+
+        .button_text{
+        position: relative;
+        }
+
+        .download-btn:hover{
+        color: #0f1923;
+        }
+
+        .download-btn:hover .button_sl{
+        width: calc(100% + 15px);
+        }
+
+        .download-btn:hover .button_lg::after{
+        background-color: #fff;
+        }
+
+        .download{
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration-line: none;
+        color: #fff;
+        background: linear-gradient(to bottom, #86bc25, #3e8e41);
+        border: none;
+        border-radius: 8px;
+        margin: 8px 24px;
+        box-shadow: 0 6px 20px -8px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        transition: all 500ms ease;
+        position: fixed;
+        left: 80px;
+        bottom: 40px;
+        z-index: 200;
+        }
+        .download:hover{
+        transform: translateY(-4px);
+        color: #fff;
+        }
+        .btn{
+        background-color: transparent;
+        color: #fff;
+        }
+        .btn:hover{
+        color: #fff;
         }
       </style>
     </head>
@@ -116,11 +231,18 @@
         <div class="ml-auto">
           <button class="btn btn-dark" id="toggle-important-notes">Important Notes & Assumptions</button>
         </div>
+
+        <button class="download-btn">
+          <span class="button_lg">
+              <span class="button_sl"></span>
+              <span class="button_text">Download Report</span>
+          </span>
+        </button>
+
       </div>
     </nav>
     <div class="info-container">
       <div class="important-notes card card-body">
-        <button class="close-btn">&times;</button>
         <ol>
           <li>This effort metrics include developer time for Unit test case  preparation, Technical design specification document preparation, Run book preparation.</li>
           <li>These efforts are purely on BODS program development, custom ABAP programs are not part of these efforts. However, SQL Procedures wherever required are considered.</li>
@@ -158,26 +280,6 @@
 
     <div class="container d-flex justify-content-center mt-4">
       <div class="card mx-auto text-center">
-        <div class="card-header">
-          <h4 class="card-title">Selected Objects</h4>
-        </div>
-        <div class="card-body">
-          <table class="table table-striped table-bordered">
-            <tbody>
-              {% for key, value in selected_objects.items() %}
-                <tr>
-                  <td>{{ key }}</td>
-                  <td>{{ value }}</td>
-                </tr>
-              {% endfor %}
-            </tbody>
-          </table>        
-        </div>
-      </div>
-    </div>
-
-    <div class="container d-flex justify-content-center mt-4">
-      <div class="card mx-auto text-center">
             <div class="card-header">
               <h4 class="card-title">Summary</h4>
             </div>
@@ -212,15 +314,15 @@
                   <td class="text-right theader">{{ result5 }}</td>
                 </tr>
                 <tr>
-                  <th class="text-left header">Total number of resource required</th>
+                  <th class="text-left header">Number of resource required</th>
                   <td class="text-right theader">{{ result40 }}</td>
                 </tr>
                 <tr>
-                  <th class="text-left header">Total number of Senior Consultant/s required</th>
+                  <th class="text-left header">Number of Senior Consultant/s required</th>
                   <td class="text-right theader">{{ result41 }}</td>
                 </tr>
                 <tr>
-                  <th class="text-left header">Total number of Consultant/s required</th>
+                  <th class="text-left header">Number of Consultant/s required</th>
                   <td class="text-right theader">{{ result42 }}</td>
                 </tr>
               </table>
@@ -416,6 +518,13 @@
         </div>  
       </div>
     </div>
+
+    <script>
+      const downloadBtn = document.querySelector(".download-btn")
+      downloadBtn.addEventListener("click", () => {
+        window.print();
+      });
+    </script>
 
     <script>
       const headers = document.querySelectorAll(".card-header");
